@@ -87,7 +87,6 @@ def save_rawdata_summary_csv(s3bucket, yesterday_str, cvechanges):
     s3bucket.put_object(Key=fname, Body=csv_data)
 
 def get_nvd_changes(yesterday_str):
-    logger.info("toSaveBucket:{}".format(os.environ["s3bucket"]))
     cvechanges = nvd_util.get_nvd_change_by_date(yesterday_str)
     logger.info("all events Length:{}".format(len(cvechanges)))
     cvechanges = [ nvd_util.CveChange(each) for each in cvechanges ]
@@ -148,6 +147,7 @@ def main():
     config = parse_config()
     s3bucket_name = config["storage"]["s3"]["bucket"]
     yesterday_str = get_yesterday()
+    logger.info("toSaveBucket:{} checkedDate:{}".format(s3bucket_name, yesterday_str))
 
     # get nvd events at yesterday
     nvd_changes = get_nvd_changes(yesterday_str)
