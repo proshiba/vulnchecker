@@ -29,7 +29,7 @@ def save_enrichdata_summary_csv(enrich_events, yesterday_str, s3bucket_name):
     s3bucket = s3.Bucket(s3bucket_name)
     month_of_yesterday = yesterday_str.rsplit("-", 1)[0]
     fname = "enrich/{}/{}.tsv".format(month_of_yesterday, yesterday_str)
-    fname_current_only_file = "enrich/current/{}.tsv".format(yesterday_str)
+    fname_current_only_file = "enrich/current/current_result.tsv"
     headers = ["cve_id", "create_date", "cvss_string", "cvss_score", "cve_src", "shortDesc", "vulnSW", "affectVersion", "fixedVersion", "TriggeredBug", "impact"]
     sio = io.StringIO()
     writer = csv.writer(sio, delimiter='\t')
