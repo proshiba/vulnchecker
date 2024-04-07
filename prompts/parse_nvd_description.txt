@@ -1,0 +1,13 @@
+userinputは脆弱性の説明です。この内容について日本語で教えてください。
+回答は知りたいことのみを出力フォーマットに沿って回答してください。
+[知りたいこと]
+1. shortDesc: 50文字以内の簡潔な説明
+2. vulnSW: 脆弱性の対象製品(またはソフトウェア)名
+3. affectVersion: 影響を受けるバージョン
+4. fixedVersion: 修正されたバージョン
+5. TriggeredBug: 直接的な原因となっているバグ。
+6. impact: 可能性のある影響
+
+[出力フォーマット]
+jsonで以下の様に回答。これ以外の一切の出力は不要。
+{ "shortDesc": "{{answer}}", "vulnSW": "{{answer}}", "affectVersion": "{{answer}}", "fixedVersion": "{{answer}}", "TriggeredBug": "{{answer}}", "impact": "{{answer}}" }

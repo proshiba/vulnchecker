@@ -1,0 +1,5 @@
+requests
+cvss
+boto3
+openai
+pyyaml

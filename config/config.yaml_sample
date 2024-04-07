@@ -1,0 +1,16 @@
+storage:
+  type: s3
+  s3:
+    bucket: your_bucket_name_write_here
+openai_parse:
+  min_cvss_score: 7.0
+  enable: true
+  model: gpt-4
+  creds:
+    type: osenv # currently osenv only. In the future, it will be able to use a secret manager or command line arguments
+    api_key_name: OPENAI_API_KEY
+  omit_property:
+    max_length: 1000
+    use_which: both # head, tail, both
+  system_prompt:
+    use_prompt_file: parse_nvd_description.txt
