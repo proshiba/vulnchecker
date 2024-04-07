@@ -9,7 +9,7 @@
 ## 使い方
 
 全体として以下のようなイメージで動作・利用することを想定しています。(AWS利用想定)  
-![イメージ図](./images/利用イメージ.png)
+![イメージ図](./docs/images/利用イメージ.png)
 
 OpenAIでわかりやすくした結果は、CSVで保存されています。  
 そのためExcelなどで見ることも可能ですが、Athenaの利用も可能になっています。(本リポジトリにあるathena_query_templatesはAthenaでデータベース作成や検索をするサンプルです)
@@ -38,7 +38,7 @@ pip install -r requirements
 
 私はLambda上で利用していますが、その場合はLayerとして以下の様に必要ライブラリを追加してください。  
 
-![lambdaLayer](./images/lambdalayer.png)
+![lambdaLayer](./docs/images/lambdalayer.png)
 
 - 設定ファイル(config内のconfig.yaml_sample)をリネームしS3バケットなどの設定を実施(以下にあるyour_bucket_name_write_hereをバケット名に入れ替え)
   - 必要に応じて、その他の設定もカスタマイズしてください。
@@ -69,7 +69,7 @@ main.pyを実行すれば動作します。lambdaであれば実行すれば`lam
 #### アウトプット
 
 ざっくり以下のような情報が取得されます。これは2024/4/6のデータをベースにしています。  
-![outputs](./images/outputs.png)
+![outputs](./docs/images/outputs.png)
 
 **disclaimer: あくまでChatGPTベースのデータであり間違いがあることは想定しておいてください**
 
@@ -113,3 +113,4 @@ openai_parse:
 1日でこれですから、月額では`$35.4`です。  
 実際にはもっとデータ量の多い日がある可能性などを考慮しますと、`$45`ぐらいは見ておいた方がいいかもです。
 
+![OpenAI金額の証跡](./docs/images/openai-billing.png)
