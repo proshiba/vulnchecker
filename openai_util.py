@@ -8,7 +8,7 @@ PROMPT_DIR = CURR_DIR+"/prompts"
 logger = getLogger()
 
 class OpenAIChat(object):
-    _MODEL = "gpt-4"
+    _MODEL = "gpt-4o"
     
     @classmethod
     def set_model(cls, model):
